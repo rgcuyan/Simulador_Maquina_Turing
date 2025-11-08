@@ -483,7 +483,8 @@ class InterfazSimulador:
     def _cambiar_velocidad(self, valor):
         """Cambia la velocidad de ejecución."""
         self.velocidad = int(float(valor))
-        self.label_velocidad.config(text=f"{self.velocidad} ms")
+        if hasattr(self, 'label_velocidad'):
+            self.label_velocidad.config(text=f"{self.velocidad} ms")
         
     def _actualizar_visualizacion(self):
         """Actualiza la visualización de la cinta y el estado."""
